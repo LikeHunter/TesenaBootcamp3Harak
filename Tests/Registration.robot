@@ -1,13 +1,13 @@
 *** Settings ***
 Library  SeleniumLibrary
 Library  DateTime
-Library  CSVLibrary
+Library  ../Script/csvLibrary.py
 
 Resource  ../Common/Keywords.robot
 Resource  ../Common/Variables.robot
 
-#Suite Setup   Start test
-#Test Teardown  End test
+Suite Setup   Start test
+Test Teardown  End test
 
 *** Variables ***
 ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\credentials.csv
@@ -30,10 +30,9 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     wait until page contains  Your Account Has Been Created!
     click element  ${ContinueBtnSucceed}
 
-    ${list}=    Create List    ${email}  ${passw}
-    ${data}=    create list    ${list}
-    Append To Csv File    ${file_path}  ${data}
-    #writeToCsv  ${file_path}
+    ${file_path} =  set variable  data/credentials.csv
+    overwrite_csv_file  ${file_path}  ${email}  ${passw}
+
 
 002_Registration_EmptyForm
     [Documentation]  Negative scenario path for registration - all fields are empty
