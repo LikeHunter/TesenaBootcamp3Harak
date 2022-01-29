@@ -3,10 +3,12 @@
 *** Variables ***
 # Element locators
 
-# Registration
+# Registration  / login
 ${mainPageUrl} =  http://tutorialsninja.com/demo/
 ${myAccountTab} =  //a[@title="My Account"]
 ${registration} =  //a[contains(text(),'Register')]
+${login} =  //a[contains(text(),'Login')]
+${loginBtn} =  //input[@value="Login"]
 
 ${firstNameField} =  //input[@id="input-firstname"]
 ${lastNameField} =  //input[@id="input-lastname"]
@@ -19,3 +21,10 @@ ${policyCheckbox} =  //input[@name="agree"]
 ${ContinueBtn} =  //input[@value="Continue"]
 
 ${ContinueBtnSucceed} =  //div[@class="pull-right"]/a
+
+# Search
+${searchBarField} =  //input[@name="search"]
+${SearchBtn} =  //button[@type="button"]//i[@class="fa fa-search"]
+${SearchedItem} =  //div[@class="product-thumb"]//h4/a
+${SearchConfirmText} =  //div[@id="content"]//h2
+${SearchMessage} =  //div[@id="content"]//p[2]

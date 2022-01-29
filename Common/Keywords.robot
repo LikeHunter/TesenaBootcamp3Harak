@@ -1,13 +1,17 @@
 *** Settings ***
 Resource  Variables.robot
 Library  ../Script/csvLibrary.py
+Library  SeleniumLibrary
+Library  String
+
+
 *** Keywords ***
 Start test
     open browser  ${mainPageUrl}  chrome
     Maximize Browser Window
 End test
     close browser
-
+# ---------------  REGISTRATION  --------------------------
 Select registration
     [Documentation]  Keyword for fill data of registration form
     wait until element is visible  ${myAccountTab}
@@ -48,3 +52,41 @@ Check registration message
 Store credentials into CSV
     [Arguments]  ${email}  ${passw}  ${file_path}
     overwrite_csv_file  ${file_path}  ${email}  ${passw}
+
+
+# ---------------  LOGIN  --------------------------
+Select login
+    [Documentation]  Keyword for fill data of registration form
+    wait until element is visible  ${myAccountTab}
+    click element  ${myAccountTab}
+    wait until element is visible    ${login}
+    click element  ${login}
+
+Login into website
+   [Arguments]  ${email}  ${passwd}
+   wait until element is visible  ${emailField}
+   input text  ${emailField}  ${email}
+   input text  ${passwordField}  ${passwd}
+   click element  ${loginBtn}
+
+Check result message
+    [Documentation]  Keyword for fill data of registration form
+    [Arguments]  ${message}
+    wait until page contains  ${message}
+
+
+
+#  --------------  SEARCH ITEM  ------------------
+Search item
+    [Documentation]  Keyword for fill data of registration form
+    [Arguments]  ${itemName}
+    wait until element is visible  ${searchBarField}
+    input text  ${searchBarField}  ${itemName}
+    click element  ${SearchBtn}
+
+Check searched item
+    [Arguments]  ${itemName}
+    ${item} =  Get Text  ${SearchedItem}
+    ${item} =  Convert To Lowercase  ${item}
+    ${itemName} =  Convert To Lowercase  ${itemName}
+    should be equal  ${itemName}  ${item}
