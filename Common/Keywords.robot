@@ -90,3 +90,21 @@ Check searched item
     ${item} =  Convert To Lowercase  ${item}
     ${itemName} =  Convert To Lowercase  ${itemName}
     should be equal  ${itemName}  ${item}
+
+Add to cart
+    click element  ${addToCart}
+    sleep  1s
+
+Check number of products in Cart
+    [Arguments]  ${ItemNumbers}  ${totalPrice}
+    ${Cart} =  set variable  ${ItemNumbers} item(s) - ${totalPrice}
+    ${productsInCart} =  Get Text  ${cartTotal}
+    should be equal  ${Cart}  ${productsInCart}
+
+Remove item from cart
+    [Arguments]  ${item}
+    click element  ${cartTotal}
+    click element  ${viewCart}
+    ${productsInCart} =  Get Text  ${itemInCart}
+    should be equal  ${item}  ${productsInCart}
+    click element  ${cartRemoveBtn}
