@@ -19,7 +19,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 
 001_AddToCartAndClearCart
     [Documentation]  Happy path for search an item,add an item to cart and then clear cart
-    [Tags]  001_AddToCartAndClearCart  Cart  positiveScenario
+    [Tags]  001_AddToCartAndClearCart  Cart  positiveScenario  TesenaBootcamp3
     ${searchedItemName} =  set variable  iPhone
     ${productPrice} =  set variable  $123.20
 

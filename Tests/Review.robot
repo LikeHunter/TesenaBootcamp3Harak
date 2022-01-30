@@ -19,7 +19,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 *** Test Cases ***
 001_CreateReview_happy_path
     [Documentation]  Happy path for creating review of products
-    [Tags]  001_CreateReview_happy_path  Search  positiveScenario
+    [Tags]  001_CreateReview_happy_path  Search  positiveScenario  TesenaBootcamp3
     ${searchedItemName} =  set variable  Mac
     ${name} =  set variable  Tesena Test
     ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
@@ -29,7 +29,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 
 002_CreateReview_emptyForm2
     [Documentation]  Negative scenario for posting empty review form
-    [Tags]  002_CreateReview_emptyForm  Search  negativeScenario
+    [Tags]  002_CreateReview_emptyForm  Search  negativeScenario  TesenaBootcamp3
     ${searchedItemName} =  set variable  Mac
 
     Create review  ${searchedItemName}  n/a  n/a  n/a
@@ -37,7 +37,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 
 003_CreateReview_MandatoryFields_Rating
     [Documentation]  Negative scenario for check mandatory rating field
-    [Tags]  003_CreateReview_MandatoryFields_Rating  Review  negativeScenario
+    [Tags]  003_CreateReview_MandatoryFields_Rating  Review  negativeScenario  TesenaBootcamp3
     ${searchedItemName} =  set variable  iPhone
     ${name} =  set variable  Tesena Test
     ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
@@ -49,7 +49,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 
 004_CreateReview_MandatoryFields_Name
     [Documentation]  Negative scenario for check mandatory name field
-    [Tags]  004_CreateReview_MandatoryFields_Name  Review  negativeScenario
+    [Tags]  004_CreateReview_MandatoryFields_Name  Review  negativeScenario  TesenaBootcamp3
     ${searchedItemName} =  set variable  iPhone
     ${name} =  set variable  Tesena Test
     ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
@@ -59,7 +59,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 
 005_CreateReview_MandatoryFields_Text
     [Documentation]  Negative scenario for check mandatory text field
-    [Tags]  005_CreateReview_MandatoryFields_Text  Review  negativeScenario
+    [Tags]  005_CreateReview_MandatoryFields_Text  Review  negativeScenario  TesenaBootcamp3
     ${searchedItemName} =  set variable  iPhone
     ${name} =  set variable  Tesena Test
     ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy

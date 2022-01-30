@@ -19,7 +19,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 
 001_Login_happy_path
     [Documentation]  Happy path for login
-    [Tags]  001_Login_happy_path  Login  positiveScenario
+    [Tags]  001_Login_happy_path  Login  positiveScenario  TesenaBootcamp3
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
     ${email} =  set variable  abc@test.test
@@ -31,7 +31,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 
 002_Login_wrong_credentials
     [Documentation]  Test scenario with wrong credentials for login
-    [Tags]  002_Login_wrong_credentials  Login  negativeScenario
+    [Tags]  002_Login_wrong_credentials  Login  negativeScenario  TesenaBootcamp3
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
     ${email} =  set variable  neregistrovanyEmail@test.test

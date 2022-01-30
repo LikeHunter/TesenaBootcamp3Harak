@@ -17,7 +17,7 @@ ${file_path} =  data/credentials.csv
 *** Test Cases ***
 001_Registration_happy_path
     [Documentation]  Happy path for registration
-    [Tags]  001_Registration_happy_path  Registration  positiveScenario
+    [Tags]  001_Registration_happy_path  Registration  positiveScenario  TesenaBootcamp3
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
     ${email} =  set variable  ${timestamp}@test.test
@@ -32,7 +32,7 @@ ${file_path} =  data/credentials.csv
 
 002_Registration_EmptyForm
     [Documentation]  Negative scenario path for registration - all fields are empty
-    [Tags]  002_Registration_EmptyForm  Registration  negativeScenario
+    [Tags]  002_Registration_EmptyForm  Registration  negativeScenario  TesenaBootcamp3
     ${email} =  Evaluate  int(round(time.time() * 1000))  time
     Select registration
     Send empty registration form
@@ -41,7 +41,7 @@ ${file_path} =  data/credentials.csv
 
 003_Registration_NoPrivacePolicy
     [Documentation]  Negative scenario check mandatory field privace policy
-    [Tags]  003_Registration_NoPrivacePolicy  Registration  negativeScenario
+    [Tags]  003_Registration_NoPrivacePolicy  Registration  negativeScenario  TesenaBootcamp3
 
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
