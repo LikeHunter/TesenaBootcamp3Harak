@@ -22,8 +22,8 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     Check searched item  ${searchedItemName}
 
 002_SearchItem_noProducts
-    [Documentation]  Happy path for searched no products
-    [Tags]  002_SearchItem_noProducts  Search  positiveScenario
-    ${searchedItemName} =  set variable  monitor
+    [Documentation]  Test scenario for searching no products
+    [Tags]  002_SearchItem_noProducts  Search  negativeScenario
+    ${searchedItemName} =  set variable  yxc
     Search item  ${searchedItemName}
     Check result message  There is no product that matches the search criteria.

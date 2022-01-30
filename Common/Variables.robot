@@ -35,3 +35,9 @@ ${addToCart} =  //div[@id="content"]//button/i[@class="fa fa-shopping-cart"]
 ${viewCart} =  //strong//i[@class="fa fa-shopping-cart"]
 ${itemInCart} =  //div[@id="content"]//td[@class="text-left"]//a
 ${cartRemoveBtn} =  //button[@data-original-title="Remove"]
+
+# Reviews
+${reviewTab} =  //a[contains(text(),'Reviews')]
+${reviewerNameField} =  //input[@id="input-name"]
+${reviewerTextField} =  //textarea[@id="input-review"]
+${reviewContinueBtn} =  //button[@id="button-review"]
