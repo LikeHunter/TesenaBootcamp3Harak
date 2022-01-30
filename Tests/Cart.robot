@@ -1,4 +1,7 @@
 *** Settings ***
+Documentation    Tests to verify that functionality of cart of
+...              website  http://tutorialsninja.com/demo/
+
 Library  SeleniumLibrary
 Library  DateTime
 Library  ../Script/csvLibrary.py
