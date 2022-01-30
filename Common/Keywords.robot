@@ -136,6 +136,14 @@ Fill empty review form
     [Documentation]  Keyword for post empty review form
     click element  ${reviewContinueBtn}
 
+Create review
+    [Arguments]  ${searchedItemName}  ${name}  ${text}  ${rating}
+    Search item  ${searchedItemName}
+    Show item detail  ${searchedItemName}
+    Navigate to review
+    Fill review form  ${name}  ${text}  ${rating}
+
+
 Fill review form
     [Documentation]  Keyword for post filled review form
     [Arguments]  ${name}=n/a  ${text}=n/a  ${rating}=n/a
