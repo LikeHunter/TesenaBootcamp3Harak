@@ -34,9 +34,9 @@ Fill registration form
     input text  ${phoneNumberField}  ${phoneNumber}
     input text  ${passwordField}  ${passwd}
     input text  ${passwordConfirmField}  ${passwd}
-    check policy check box  ${policy}
+    Check policy check box  ${policy}
 
-check policy check box
+Check policy check box
     [Documentation]  Keyword for check privace policy by registration
     [Arguments]  ${booleanState}=true
     run keyword if  '${booleanState}' == 'false'  click element  ${ContinueBtn}
