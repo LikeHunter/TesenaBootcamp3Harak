@@ -10,7 +10,7 @@ Resource  ../Common/Keywords.robot
 Resource  ../Common/ReadCredentials.robot
 Resource  ../Common/Variables.robot
 
-Suite Setup   Start test
+Test Setup  Start test
 Test Teardown  End test
 
 *** Variables ***
