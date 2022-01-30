@@ -137,6 +137,7 @@ Fill empty review form
     click element  ${reviewContinueBtn}
 
 Create review
+    [Documentation]  Keyword for create review of selected item
     [Arguments]  ${searchedItemName}  ${name}  ${text}  ${rating}
     Search item  ${searchedItemName}
     Show item detail  ${searchedItemName}
