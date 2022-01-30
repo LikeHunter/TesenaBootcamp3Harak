@@ -19,6 +19,10 @@ Select registration
     wait until element is visible    ${registration}
     click element  ${registration}
 
+Send empty registration form
+    [Documentation]  Keyword for send empty data of registration form
+    click element  ${ContinueBtn}
+
 Fill registration form
     [Documentation]  Keyword for fill data of registration form
     [Arguments]  ${firstName}  ${lastName}  ${email}  ${phoneNumber}  ${passwd}  ${policy}

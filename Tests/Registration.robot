@@ -32,7 +32,7 @@ ${file_path} =  data/credentials.csv
     [Tags]  002_Registration_EmptyForm  Registration  negativeScenario
     ${email} =  Evaluate  int(round(time.time() * 1000))  time
     Select registration
-    click element  ${ContinueBtn}
+    Send empty registration form
     Check registration message  Warning: You must agree to the Privacy Policy!
 
 
