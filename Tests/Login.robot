@@ -16,7 +16,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 
 001_Login_happy_path
     [Documentation]  Happy path for login
-    [Tags]  loginTC_001  Login  positiveScenario
+    [Tags]  001_Login_happy_path  Login  positiveScenario
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
     ${email} =  set variable  abc@test.test
@@ -27,17 +27,13 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     # zde je chyba, jelikoz se nelze zaregistrovat
 
 002_Login_wrong_credentials
-    [Documentation]  Happy path for registration
-    [Tags]  loginTC_002  Login  negativeScenario
+    [Documentation]  Test scenario with wrong credentials for login
+    [Tags]  002_Login_wrong_credentials  Login  negativeScenario
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
-    ${email} =  set variable  abcD@test.test
+    ${email} =  set variable  neregistrovanyEmail@test.test
     ${passw} =  set variable  TesenaBootcamp
 
     Select login
     Login into website   ${email}  ${passw}
     Check result message  Warning: No match for E-Mail Address and/or Password.
-
-
-003_Login_Credentials
-    Read login credentials  data/credentials.csv  1
