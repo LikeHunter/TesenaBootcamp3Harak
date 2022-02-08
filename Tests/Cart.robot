@@ -2,13 +2,7 @@
 Documentation    Tests to verify that functionality of cart of
 ...              website  http://tutorialsninja.com/demo/
 
-Library  SeleniumLibrary
-Library  DateTime
-Library  ../Script/csvLibrary.py
-
 Resource  ../Common/Keywords.robot
-Resource  ../Common/ReadCredentials.robot
-Resource  ../Common/Variables.robot
 
 Test Setup  Start test
 Test Teardown  End test
@@ -29,12 +23,12 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     Check number of products in Cart  ${defaultCartProductsnumber}  ${defaultCartTotalPrice}
     Add to cart
 
-    Check result message  Success: You have added ${searchedItemName} to your shopping cart!
+    Check result message  Success: You have added ${searchedItemName} to your shopping cart!  success
     ${increasedtCartProductsnumber} =  set variable  1
     Check number of products in Cart  ${increasedtCartProductsnumber}  ${productPrice}
 
     Remove item from cart   ${searchedItemName}
-    Check result message  Your shopping cart is empty!
+    Check result message  Your shopping cart is empty!  empty
     Check number of products in Cart  ${defaultCartProductsnumber}  ${defaultCartTotalPrice}
 
 

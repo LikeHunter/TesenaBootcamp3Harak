@@ -2,12 +2,7 @@
 Documentation    Tests to verify that functionality of registration of
 ...              website  http://tutorialsninja.com/demo/
 
-Library  SeleniumLibrary
-Library  DateTime
-Library  ../Script/csvLibrary.py
-
 Resource  ../Common/Keywords.robot
-Resource  ../Common/Variables.robot
 
 Test Setup  Start test
 Test Teardown  End test
@@ -25,7 +20,7 @@ ${file_path} =  data/credentials.csv
 
     Select registration
     Fill registration form   Test  Testerovič  ${email}  ${passw}  TesenaTest  true
-    Check registration message  Your Account Has Been Created!
+    Check registration message  Your Account Has Been Created!  success
     Store credentials into CSV   ${email}  ${passw}  ${file_path}
 
 
@@ -36,7 +31,7 @@ ${file_path} =  data/credentials.csv
     ${email} =  Evaluate  int(round(time.time() * 1000))  time
     Select registration
     Send empty registration form
-    Check registration message  Warning: You must agree to the Privacy Policy!
+    Check registration message  Warning: You must agree to the Privacy Policy!  error
 
 
 003_Registration_NoPrivacePolicy
@@ -50,5 +45,5 @@ ${file_path} =  data/credentials.csv
 
     Select registration
     Fill registration form   Test  Testerovič  ${email}  ${passw}  TesenaTest  false
-    Check registration message  Warning: You must agree to the Privacy Policy!
+    Check registration message  Warning: You must agree to the Privacy Policy!  error
 
