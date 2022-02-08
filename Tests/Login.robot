@@ -2,13 +2,9 @@
 Documentation    Tests to verify that functionality of login of
 ...              website  http://tutorialsninja.com/demo/
 
-Library  SeleniumLibrary
-Library  DateTime
-Library  ../Script/csvLibrary.py
-
 Resource  ../Common/Keywords.robot
 Resource  ../Common/ReadCredentials.robot
-Resource  ../Common/Variables.robot
+
 
 Test Setup  Start test
 Test Teardown  End test
@@ -39,4 +35,4 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 
     Select login
     Login into website   ${email}  ${passw}
-    Check result message  Warning: No match for E-Mail Address and/or Password.
+    Check result message  Warning: No match for E-Mail Address and/or Password.  error

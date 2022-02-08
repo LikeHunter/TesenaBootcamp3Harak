@@ -2,13 +2,7 @@
 Documentation    Tests to verify that functionality of searching
 ...              an items of website  http://tutorialsninja.com/demo/
 
-Library  SeleniumLibrary
-Library  DateTime
-Library  ../Script/csvLibrary.py
-
 Resource  ../Common/Keywords.robot
-Resource  ../Common/ReadCredentials.robot
-Resource  ../Common/Variables.robot
 
 Test Setup  Start test
 Test Teardown  End test
@@ -29,4 +23,4 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     [Tags]  002_SearchItem_noProducts  Search  negativeScenario  TesenaBootcamp3
     ${searchedItemName} =  set variable  yxc
     Search item  ${searchedItemName}
-    Check result message  There is no product that matches the search criteria.
+    Check result message  There is no product that matches the search criteria.  noProducts

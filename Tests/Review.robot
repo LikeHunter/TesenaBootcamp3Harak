@@ -2,13 +2,7 @@
 Documentation    Tests to verify that functionality of reviews
 ...              of an item for website  http://tutorialsninja.com/demo/
 
-Library  SeleniumLibrary
-Library  DateTime
-Library  ../Script/csvLibrary.py
-
 Resource  ../Common/Keywords.robot
-Resource  ../Common/ReadCredentials.robot
-Resource  ../Common/Variables.robot
 
 Test Setup  Start test
 Test Teardown  End test
@@ -19,21 +13,21 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
 *** Test Cases ***
 001_CreateReview_happy_path
     [Documentation]  Happy path for creating review of products
-    [Tags]  001_CreateReview_happy_path  Search  positiveScenario  TesenaBootcamp3
-    ${searchedItemName} =  set variable  Mac
+    [Tags]  001_CreateReview_happy_path  Review  positiveScenario  TesenaBootcamp3
+    ${searchedItemName} =  set variable  iPhone
     ${name} =  set variable  Tesena Test
     ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
     ${rating} =  set variable  5
     Create review  ${searchedItemName}  ${name}  ${text}  ${rating}
-    Check result message  Thank you for your review. It has been submitted to the webmaster for approval.
+    Check result message  Thank you for your review. It has been submitted to the webmaster for approval.  success
 
 002_CreateReview_emptyForm2
     [Documentation]  Negative scenario for posting empty review form
-    [Tags]  002_CreateReview_emptyForm  Search  negativeScenario  TesenaBootcamp3
-    ${searchedItemName} =  set variable  Mac
+    [Tags]  002_CreateReview_emptyForm  Review  negativeScenario  TesenaBootcamp3
+    ${searchedItemName} =  set variable  iPhone
 
     Create review  ${searchedItemName}  n/a  n/a  n/a
-    Check result message   Warning: Please select a review rating!
+    Check result message   Warning: Please select a review rating!  error
 
 003_CreateReview_MandatoryFields_Rating
     [Documentation]  Negative scenario for check mandatory rating field
@@ -44,7 +38,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     ${rating} =  set variable  1
 
     Create review  ${searchedItemName}  ${name}  ${text}  n/a
-    Check result message  Warning: Please select a review rating!
+    Check result message  Warning: Please select a review rating!  error
 
 
 004_CreateReview_MandatoryFields_Name
@@ -55,7 +49,7 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
     ${rating} =  set variable  2
     Create review  ${searchedItemName}  n/a  ${text}  ${rating}
-    Check result message  Warning: Review Name must be between 3 and 25 characters!
+    Check result message  Warning: Review Name must be between 3 and 25 characters!  error
 
 005_CreateReview_MandatoryFields_Text
     [Documentation]  Negative scenario for check mandatory text field
@@ -65,4 +59,4 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
     ${rating} =  set variable  3
     Create review  ${searchedItemName}  ${name}  n/a  ${rating}
-    Check result message  Warning: Review Text must be between 25 and 1000 characters!
+    Check result message  Warning: Review Text must be between 25 and 1000 characters!  error
