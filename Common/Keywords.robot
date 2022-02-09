@@ -70,9 +70,9 @@ Select Login
 Login Into Website
    [Documentation]  Keyword for login
    [Arguments]  ${email}  ${passwd}
-   Type Text    ${emailField}  ${email}
-   Type Text    ${passwordField}  ${passwd}
-   Click        ${loginBtn}
+   Type Text  ${emailField}  ${email}
+   Type Text  ${passwordField}  ${passwd}
+   Click  ${loginBtn}
 
 
 
@@ -80,14 +80,14 @@ Login Into Website
 Search Item
     [Documentation]  Keyword for search an item
     [Arguments]  ${itemName}
-    Type Text   ${searchBarField}  ${itemName}
-    Click       ${searchBtn}
+    Type Text  ${searchBarField}  ${itemName}
+    Click  ${searchBtn}
 
 Check Searched Item
     [Documentation]  Keyword for check searched item
     [Arguments]  ${itemName}
-    ${item}     =  Get Text  ${searchedItem}
-    ${item}     =  Convert To Lowercase  ${item}
+    ${item} =  Get Text  ${searchedItem}
+    ${item} =  Convert To Lowercase  ${item}
     ${itemName} =  Convert To Lowercase  ${itemName}
     Should Be Equal  ${itemName}  ${item}
 
