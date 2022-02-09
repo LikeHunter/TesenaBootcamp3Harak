@@ -4,23 +4,21 @@ Documentation    Tests to verify that functionality of searching
 
 Resource  ../Common/Keywords.robot
 
-Test Setup  Start test
-Test Teardown  End test
+Test Setup  Start Test
+Test Teardown  End Test
 
-*** Variables ***
-${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\credentials.csv
+
 *** Test Cases ***
-
 001_SearchItem_happy_path
     [Documentation]  Happy path for login
     [Tags]  001_SearchItem_happy_path  Search  positiveScenario  TesenaBootcamp3
-    ${searchedItemName} =  set variable  Iphone
-    Search item  ${searchedItemName}
-    Check searched item  ${searchedItemName}
+    ${searchedItemName} =  Set Variable  Iphone
+    Search Item  ${searchedItemName}
+    Check Searched Item  ${searchedItemName}
 
 002_SearchItem_noProducts
     [Documentation]  Test scenario for searching no products
     [Tags]  002_SearchItem_noProducts  Search  negativeScenario  TesenaBootcamp3
-    ${searchedItemName} =  set variable  yxc
-    Search item  ${searchedItemName}
-    Check result message  There is no product that matches the search criteria.  noProducts
+    ${searchedItemName} =  Set Variable  yxc
+    Search Item  ${searchedItemName}
+    Check Result Message  There is no product that matches the search criteria.  noProducts
