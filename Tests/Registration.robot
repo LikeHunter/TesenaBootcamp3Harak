@@ -4,8 +4,8 @@ Documentation    Tests to verify that functionality of registration of
 
 Resource  ../Common/Keywords.robot
 
-Test Setup  Start test
-Test Teardown  End test
+Test Setup  Start Test
+Test Teardown  End Test
 
 *** Variables ***
 ${file_path} =  data/credentials.csv
@@ -15,13 +15,13 @@ ${file_path} =  data/credentials.csv
     [Tags]  001_Registration_happy_path  Registration  positiveScenario  TesenaBootcamp3
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
-    ${email} =  set variable  ${timestamp}@test.test
-    ${passw} =  set variable  TesenaBootcamp
+    ${email} =   Set Variable  ${timestamp}@test.test
+    ${passw} =   Set Variable  TesenaBootcamp
 
-    Select registration
-    Fill registration form   Test  Testerovič  ${email}  ${passw}  TesenaTest  true
-    Check registration message  Your Account Has Been Created!  success
-    Store credentials into CSV   ${email}  ${passw}  ${file_path}
+    Select Registration
+    Fill Registration Form   Test  Testerovič  ${email}  ${passw}  TesenaTest  true
+    Check Registration Message  Your Account Has Been Created!  success
+    Store Credentials Into CSV  ${email}  ${passw}  ${file_path}
 
 
 
@@ -29,9 +29,9 @@ ${file_path} =  data/credentials.csv
     [Documentation]  Negative scenario path for registration - all fields are empty
     [Tags]  002_Registration_EmptyForm  Registration  negativeScenario  TesenaBootcamp3
     ${email} =  Evaluate  int(round(time.time() * 1000))  time
-    Select registration
-    Send empty registration form
-    Check registration message  Warning: You must agree to the Privacy Policy!  error
+    Select Registration
+    Send Empty Registration Form
+    Check Registration Message  Warning: You must agree to the Privacy Policy!  error
 
 
 003_Registration_NoPrivacePolicy
@@ -40,10 +40,10 @@ ${file_path} =  data/credentials.csv
 
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
-    ${email} =  set variable  ${timestamp}@test.test
-    ${passw} =  set variable  TesenaBootcamp
+    ${email} =   Set Variable  ${timestamp}@test.test
+    ${passw} =   Set Variable  TesenaBootcamp
 
-    Select registration
-    Fill registration form   Test  Testerovič  ${email}  ${passw}  TesenaTest  false
-    Check registration message  Warning: You must agree to the Privacy Policy!  error
+    Select Registration
+    Fill Registration Form   Test  Testerovič  ${email}  ${passw}  TesenaTest  false
+    Check Registration Message  Warning: You must agree to the Privacy Policy!  error
 

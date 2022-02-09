@@ -6,11 +6,11 @@ Resource  ../Common/Keywords.robot
 Resource  ../Common/ReadCredentials.robot
 
 
-Test Setup  Start test
-Test Teardown  End test
+Test Setup  Start Test
+Test Teardown  End Test
 
 *** Variables ***
-${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\credentials.csv
+${file_path} =  data/credentials.csv
 *** Test Cases ***
 
 001_Login_happy_path
@@ -18,11 +18,11 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     [Tags]  001_Login_happy_path  Login  positiveScenario  TesenaBootcamp3
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
-    ${email} =  set variable  abc@test.test
-    ${passw} =  set variable  TesenaBootcamp
+    ${email} =  Set Variable  abc@test.test
+    ${passw} =  Set Variable  TesenaBootcamp
 
-    Select login
-    Login into website   ${email}  ${passw}
+    Select Login
+    Login Into Website   ${email}  ${passw}
     # zde je chyba, jelikoz se nelze zaregistrovat
 
 002_Login_wrong_credentials
@@ -30,9 +30,9 @@ ${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\creden
     [Tags]  002_Login_wrong_credentials  Login  negativeScenario  TesenaBootcamp3
     ${timestamp} =  Evaluate  int(round(time.time() * 1000))  time
     ${timestamp} =  Convert To String  ${timestamp}
-    ${email} =  set variable  neregistrovanyEmail@test.test
-    ${passw} =  set variable  TesenaBootcamp
+    ${email} =  Set Variable  neregistrovanyEmail@test.test
+    ${passw} =  Set Variable  TesenaBootcamp
 
-    Select login
-    Login into website   ${email}  ${passw}
-    Check result message  Warning: No match for E-Mail Address and/or Password.  error
+    Select Login
+    Login Into Website   ${email}  ${passw}
+    Check Result Message  Warning: No match for E-Mail Address and/or Password.  error

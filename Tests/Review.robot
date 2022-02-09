@@ -4,59 +4,56 @@ Documentation    Tests to verify that functionality of reviews
 
 Resource  ../Common/Keywords.robot
 
-Test Setup  Start test
-Test Teardown  End test
-
-*** Variables ***
-${file_path} =  C:\Users\JanHaraktesena\Desktop\TesenaBootcamp3Harak\data\credentials.csv
+Test Setup  Start Test
+Test Teardown  End Test
 
 *** Test Cases ***
 001_CreateReview_happy_path
     [Documentation]  Happy path for creating review of products
     [Tags]  001_CreateReview_happy_path  Review  positiveScenario  TesenaBootcamp3
-    ${searchedItemName} =  set variable  iPhone
-    ${name} =  set variable  Tesena Test
-    ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
-    ${rating} =  set variable  5
-    Create review  ${searchedItemName}  ${name}  ${text}  ${rating}
-    Check result message  Thank you for your review. It has been submitted to the webmaster for approval.  success
+    ${searchedItemName} =  Set Variable  iPhone
+    ${name} =  Set Variable  Tesena Test
+    ${text} =  Set Variable  Příliš žluťoučký kůň úpěl ďábelské ódy
+    ${rating} =  Set Variable  5
+    Create Review  ${searchedItemName}  ${name}  ${text}  ${rating}
+    Check Result Message  Thank you for your review. It has been submitted to the webmaster for approval.  success
 
-002_CreateReview_emptyForm2
+002_CreateReview_emptyForm
     [Documentation]  Negative scenario for posting empty review form
     [Tags]  002_CreateReview_emptyForm  Review  negativeScenario  TesenaBootcamp3
-    ${searchedItemName} =  set variable  iPhone
+    ${searchedItemName} =  Set Variable  iPhone
 
-    Create review  ${searchedItemName}  n/a  n/a  n/a
-    Check result message   Warning: Please select a review rating!  error
+    Create Review  ${searchedItemName}  n/a  n/a  n/a
+    Check Result Message   Warning: Please select a review rating!  error
 
 003_CreateReview_MandatoryFields_Rating
     [Documentation]  Negative scenario for check mandatory rating field
     [Tags]  003_CreateReview_MandatoryFields_Rating  Review  negativeScenario  TesenaBootcamp3
-    ${searchedItemName} =  set variable  iPhone
-    ${name} =  set variable  Tesena Test
-    ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
-    ${rating} =  set variable  1
+    ${searchedItemName} =  Set Variable  iPhone
+    ${name} =  Set Variable  Tesena Test
+    ${text} =  Set Variable  Příliš žluťoučký kůň úpěl ďábelské ódy
+    ${rating} =  Set Variable  1
 
-    Create review  ${searchedItemName}  ${name}  ${text}  n/a
-    Check result message  Warning: Please select a review rating!  error
+    Create Review  ${searchedItemName}  ${name}  ${text}  n/a
+    Check Result Message  Warning: Please select a review rating!  error
 
 
 004_CreateReview_MandatoryFields_Name
     [Documentation]  Negative scenario for check mandatory name field
     [Tags]  004_CreateReview_MandatoryFields_Name  Review  negativeScenario  TesenaBootcamp3
-    ${searchedItemName} =  set variable  iPhone
-    ${name} =  set variable  Tesena Test
-    ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
-    ${rating} =  set variable  2
-    Create review  ${searchedItemName}  n/a  ${text}  ${rating}
-    Check result message  Warning: Review Name must be between 3 and 25 characters!  error
+    ${searchedItemName} =  Set Variable  iPhone
+    ${name} =  Set Variable  Tesena Test
+    ${text} =  Set Variable  Příliš žluťoučký kůň úpěl ďábelské ódy
+    ${rating} =  Set Variable  2
+    Create Review  ${searchedItemName}  n/a  ${text}  ${rating}
+    Check Result Message  Warning: Review Name must be between 3 and 25 characters!  error
 
 005_CreateReview_MandatoryFields_Text
     [Documentation]  Negative scenario for check mandatory text field
     [Tags]  005_CreateReview_MandatoryFields_Text  Review  negativeScenario  TesenaBootcamp3
-    ${searchedItemName} =  set variable  iPhone
-    ${name} =  set variable  Tesena Test
-    ${text} =  set variable  Příliš žluťoučký kůň úpěl ďábelské ódy
-    ${rating} =  set variable  3
-    Create review  ${searchedItemName}  ${name}  n/a  ${rating}
-    Check result message  Warning: Review Text must be between 25 and 1000 characters!  error
+    ${searchedItemName} =  Set Variable  iPhone
+    ${name} =  Set Variable  Tesena Test
+    ${text} =  Set Variable  Příliš žluťoučký kůň úpěl ďábelské ódy
+    ${rating} =  Set Variable  3
+    Create Review  ${searchedItemName}  ${name}  n/a  ${rating}
+    Check Result Message  Warning: Review Text must be between 25 and 1000 characters!  error
