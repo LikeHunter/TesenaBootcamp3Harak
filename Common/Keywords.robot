@@ -151,7 +151,7 @@ Fill Review Form
     [Arguments]  ${name}=n/a  ${text}=n/a  ${rating}=n/a
     Run Keyword If  '${name}' != 'n/a'  Set name  ${name}
     Run Keyword If  '${text}' != 'n/a'  Set text  ${text}
-    Run Keyword If  '${rating}' != 'n/a'  Set rating  ${rating}
+    Run Keyword If  '${rating}' != 'n/a'  Set Rating  ${rating}
     Click  ${reviewContinueBtn}
 
 Set Name
